@@ -1,12 +1,20 @@
 import sys
 import re
+import random
+import psycopg2
 from bs4 import BeautifulSoup
-
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWebEngineWidgets import QWebEnginePage
 
 BASE_URL = 'https://www.crunchbase.com'
+
+API_KEYS = [
+    'api_key_1',
+    'api_key_2',
+    'api_key_3',
+    'api_key_4'
+]
 
 companies = []
 pages = []
@@ -56,21 +64,33 @@ def print_green(s):
     print(f'\033[92m{s}\033[0m')
 
 
-def scrape_data(company_name):
+def connect_to_db():
+    try:
+        connection = psycopg2.connect(
+            host="localhost", 
+            database="your_database_name",  
+            user="your_username",  
+            password="your_password"  
+        )
+        return connection
+    except Exception as e:
+        print(f"Error connecting to the database: {e}")
+        sys.exit(1)
+
+
+def scrape_data(company_name, connection):
+    api_key = random.choice(API_KEYS)
+    print_green(f'Using API Key: {api_key}')
+
     name = format_name(company_name)
 
     print_green(f'Checking {company_name} alias {name}')
 
-    # load the page in "soup" variable
-    soup = get_page(f'/organization/{name}')
+    soup = get_page(f'/organization/{name}?api_key={api_key}')
     if not soup:
-        print_green(
-            f'{company_name}, alias {name} gave an error while loading')
-        with open('../data/error.csv', 'a') as file:
-            file.write('\n' + company_name)
+        print_green(f'{company_name}, alias {name} gave an error while loading')
         return
 
-    # extract website and social media links
     html_links = soup.find_all(
         'a', class_="cb-link component--field-formatter field-type-link layout-row layout-align-start-end ng-star-inserted")
     links = []
@@ -78,11 +98,8 @@ def scrape_data(company_name):
         link = extract_link(str(html))
         links.append(link)
 
-    # the name wasn't correct if there are no social links on the page
     if len(links) == 0:
         print_green(f'{company_name}, alias {name} could not be found')
-        with open('../data/not_found.csv', 'a') as file:
-            file.write('\n' + company_name)
         return
 
     website = links[0]
@@ -90,7 +107,6 @@ def scrape_data(company_name):
     if 'twitter' in links[-1]:
         company_twitter = links[-1].split('/')[-1]
 
-    # extract the personans in the team
     html_persons = soup.find_all(
         'div', class_='flex cb-padding-medium-left cb-break-word cb-hyphen')
 
@@ -111,7 +127,6 @@ def scrape_data(company_name):
         if re.search(r'founder', position, re.I):
             founders.append(name_link)
 
-    # just to be safe
     if not ceo and not cto:
         if len(founders) >= 2:
             (ceo, cto) = founders
@@ -130,8 +145,7 @@ def scrape_data(company_name):
             print(f'Could not find {person}')
             continue
 
-        card = soup.find(
-            'mat-card', class_='component--section-layout mat-card')
+        card = soup.find('mat-card', class_='component--section-layout mat-card')
 
         person_twitter = re.search(r'twitter.com/([^"]*)"', str(card))
         if not person_twitter:
@@ -143,20 +157,33 @@ def scrape_data(company_name):
         else:
             cto_twitter = person_twitter.group(1)
 
-    with open('../data/found.csv', 'a') as file:
-        file.write(
-            f'\n"{company_name}","{website}","{company_twitter}","{ceo_twitter}","{cto_twitter}"')
+    with connection.cursor() as cursor:
+        insert_query = """
+        INSERT INTO found_companies (company_name, website, company_twitter, ceo_twitter, cto_twitter)
+        VALUES (%s, %s, %s, %s, %s)
+        ON CONFLICT (company_name) DO UPDATE SET
+            website = EXCLUDED.website,
+            company_twitter = EXCLUDED.company_twitter,
+            ceo_twitter = EXCLUDED.ceo_twitter,
+            cto_twitter = EXCLUDED.cto_twitter;
+        """
+        cursor.execute(insert_query, (company_name, website, company_twitter, ceo_twitter, cto_twitter))
+        connection.commit()
 
 
-with open('../data/list_of_company_names_raw.csv', 'r') as fp:
-    line = fp.readline()
+def fetch_company_names_from_db(connection):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT company_name FROM company_list")
+        companies = cursor.fetchall()
+        return [company[0] for company in companies]
 
-    while line:
-        companies.append(line.replace('\n', ''))
 
-        line = fp.readline()
+if __name__ == "__main__":
+    connection = connect_to_db()
 
-companies = list(dict.fromkeys(companies))
+    companies = fetch_company_names_from_db(connection)
 
-for company in companies:
-    scrape_data(company)
+    for company in companies:
+        scrape_data(company, connection)
+
+    connection.close()
