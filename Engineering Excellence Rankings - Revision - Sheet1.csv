@@ -1,0 +1,331 @@
+Company,EE Tier,Program Tier
+Google,1,1
+Microsoft,1,1
+Amazon,1,1
+Facebook,1,1
+Apple,1,1
+LinkedIn,1,1
+TikTok,1,1
+OpenAi,1,1
+Kloudfuse,1,3
+TruckX,1,2
+Aida,1,3
+Doordash,2,1
+Stripe,2,1
+Twitter,2,1
+Rippling,2,1
+Snowflake,2,1
+The Trade Desk,2,1
+Atlassian,2,1
+NASA,2,1
+Icertis,2,1
+Uber ,2,1
+Square,2,1
+CashApp,2,1
+Dropbox,2,1
+Slack,2,1
+Airbnb,2,1
+Pinterest,2,1
+Zoom,2,1
+Coefficient,2,2
+Abacus,2,2
+Regie,2,3
+Dope Security,2,3
+Voicegain,2,3
+XO,2,3
+Fermat,2,2
+Mongodb,2,2
+Airtable,2,3
+Databricks,2,1
+Faire,2,2
+GamesKraft,2,2
+Epic Games,2,1
+Steam,2,1
+Miro,2,1
+Discord,2,1
+ISRO,2,2
+Spotify,2,1
+Robhinhood,2,1
+Buesky,2,2
+Coinbase,2,1
+Opensea,2,3
+Twitch,2,1
+Asana,2,1
+Roblox,2,1
+Compass,2,3
+Opendoor,2,2
+Tesla,2,1
+SpaceX,2,1
+Alchemy,2,1
+Grammarly,2,1
+OpenText,2,2
+Omneky,2,3
+UI Path,2,2
+Front,2,3
+Salesforce,3,1
+Lyft,3,1
+Snap/Snapchat,3,1
+Yahoo,3,1
+Blueshift,3,2
+Instacart,3,1
+Twilio,3,1
+Celigo,3,3
+Nium,3,4
+Pony.ai,3,4
+SoFi,3,1
+Udaan,3,3
+Auquan,3,3
+Fabric,3,2
+Harness,3,3
+Eightfold.ai,3,2
+Matic Network,3,3
+AppDynamics,3,2
+GoComet,3,4
+Tracxn,3,3
+Media.Net,3,2
+Zeta,3,5
+5ire,3,2
+ShareChat,3,3
+Navi,3,3
+Meesho,3,4
+InMobi,3,3
+Pubmatic,3,4
+VMware,3,1
+Nutanix,3,1
+Adobe,3,1
+Oracle,3,1
+Sumo Logic,3,2
+Swiggy,3,3
+Gojek,3,4
+Sophos,3,2
+RazorPay,3,3
+Myntra,3,3
+Apna,3,2
+Flipkart,3,1
+Thoughtspot,3,1
+OLX group,3,3
+Postman,3,4
+Hasura,3,3
+Amagi,3,4
+Xperi Corp,3,3
+Dream11,3,2
+MPL,3,5
+Licious,3,4
+PhonePe,3,3
+Outoftheblue,3,3
+Intel,3,1
+6sense,3,3
+Devoted Health,3,4
+Tekion,3,3
+Dailyhunt,3,2
+Slice,3,3
+Zomato,3,1
+MindTickle,3,3
+Tata 1mg,3,4
+Mensa,3,3
+Rivigo,3,4
+Druva,3,3
+Palo Alto Networks,3,1
+Dynatrace,3,1
+Compass,3,3
+Freshworks,3,3
+Airmeet,3,2
+Walmart Labs,3,1
+Zoho,3,1
+Hypersonix,3,3
+Yellow.ai,3,2
+Uniphore,3,3
+Samsung,3,1
+CommerceIQ,3,3
+Sumo Logic,3,3
+CureFit,3,2
+Unacadamey,3,4
+Grab,3,3
+Xpressbees,3,4
+ClearTrip,3,3
+SAP Labs,3,1
+Informatica,3,4
+Cisco,3,1
+Akamai,3,1
+AirtelX Labs,3,4
+Livspace,3,3
+Acko,3,4
+Paytm,3,2
+Paytm Mall,3,3
+Visa,3,1
+Rakuten,3,1
+Chargebee,3,3
+Urban Company,3,4
+Zerodha,3,3
+Expedia,3,1
+NetApp,3,1
+McAfee,3,1
+Paypal,3,1
+SpaceX,3,1
+CRED,3,3
+Chime,3,4
+Aequs,3,2
+Acceldata,3,3
+ThousandEyes,3,4
+PayU,3,2
+CHRP,3,3
+Coupa Software,3,2
+Pandora,3,1
+Splunk,3,1
+Carta,3,3
+Bolt,3,4
+Cradlewise,3,3
+Juniper Networks,3,1
+Ripple,3,3
+Hyperface,3,3
+FourKites,3,2
+Gusto,3,1
+Talkdesk,3,3
+Plaid,3,1
+New Relic,3,2
+Dew Solution,3,2
+DE Shaw,3,1
+F5networks,4,1
+BharatPe,4,3
+Gupshup,4,4
+ElasticRun,4,3
+BrowserStack,4,4
+Zendrive,4,3
+Absolute.ag,4,4
+Unstoppable Domains,4,4
+Ripplr,4,3
+Level AI,4,4
+Bizongo,4,3
+Rizzle,4,4
+JupiterOne,4,3
+Infoedge,4,4
+Adda24/7,4,3
+Here Technologies,4,4
+Groww,4,3
+MakeMyTrip,4,4
+PharmEasy,4,3
+Code nation,4,4
+SingleStore,4,4
+Times Internet,4,4
+Vedantu,4,5
+CarDekho,4,4
+Games 24x7,4,3
+Lenskart,4,4
+OneCard,4,3
+GlobalBees,4,4
+Rebel Foods,4,3
+Yubi (CredAvenue),4,4
+Fanatics,4,1
+Infra.Market,5,3
+Open,5,3
+PhysicsWallah,5,4
+Purplle,5,5
+LeadSquared,5,4
+BigBasket,5,5
+MobilKwik,5,4
+Upstox,5,5
+DarwinBox,5,4
+Oxyzo,5,5
+DealShare,5,3
+Spinny,5,4
+Tredence,5,4
+CoinSwitch Kuber,5,5
+Zycus,5,3
+Viacom18,5,4
+Intuit,5,1
+Optum,6,1
+Policybazaar,6,3
+CoinDCX,6,4
+OLA,6,5
+Ola Electric,6,1
+Cars24,6,4
+OYO Rooms,6,5
+Verse Innovation,6,4
+MyGlamm,6,5
+LEAD School,6,4
+Billdesk,6,6
+Nagarro,6,4
+Talentica,6,5
+Thoughtworks,6,4
+GS Labs,6,5
+Zemoso,6,5
+Digital Autosys,6,5
+VulcanForms,6,5
+3i Infotech,7,3
+Accenture,7,2
+Accolite Digital,7,4
+Altimetrick,7,4
+Amdocs,7,5
+Atos,7,6
+Birlasoft,7,4
+Capgemini,7,2
+Coforge,7,1
+Cognizant,7,1
+Cyient,7,1
+Datamatics,7,3
+Deloitte,7,1
+Eclerx,7,1
+EY,7,1
+FirstSource,7,3
+Fractal,7,4
+Genpact,7,3
+Globant,7,4
+Happiest Minds,7,3
+HCL Technologies,7,1
+Hexaware Technologies,7,1
+Infosys,7,1
+Intellect Design,7,4
+ITC Infotech,7,3
+KPIT,7,4
+KPMG,7,1
+L&T Technology/Services,7,5
+Leidos,7,1
+Majesco,7,4
+Mastek,7,3
+MphasiS,7,4
+Mu Sigma,7,3
+Ness,7,5
+Persistent Systems,7,6
+Publicis Sapient,7,6
+PWC,7,2
+Quess Corp,7,5
+Quest Global,7,6
+Robosoft Tech,7,2
+Rolta,7,3
+R Systems,7,4
+Sasken,7,3
+Sonata Software,7,5
+Sutherland,7,3
+Synechrom,7,5
+Tavan,7,3
+TCS,7,2
+Tech Mahindra,7,1
+Tiger Analytics,7,5
+Trigent,7,3
+Trigyn Technologies,7,2
+UST Global,7,5
+Wipro,7,4
+WNS Global,7,3
+Xoriant,7,2
+Zensar Technologies,7,4
+Droom ,8,2
+BlackBuck,8,4
+Highradius,8,6
+Blinkit,8,6
+Delhivery,8,4
+Nykaa,8,2
+Pine Labs,8,4
+upGrad,8,5
+BYJU's,8,3
+Moglix,8,2
+Zetwerk,8,5
+OfBusiness,8,2
+Five Star Business Finance,8,5
+Eruditus,8,3
+Digit Insurance ,8,5
+FirstCry,8,2
+Mamaearth,8,5
+NoBroker,8,2
+Zenoti,8,4
+ShipRocket,8,5
+Pristyn Care,8,6
